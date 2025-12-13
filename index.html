@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts: Rubik (700) and Source Sans Pro (400,700) -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS (optional) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Bootstrap Shell Template</title>
+  </head>
+
+  
+  <body>
+
+    <!-- Newsletter -->
+     <section class="newsletter-bg">
+            <span class="fw-bold">Join our newsletter and receive a free design resource bundle </span>        
+     </section>
+
+
+    <!-- Header -->
+     <header class="header border-bottom">
+            <div class="container-fluid">
+                <div class="row align-items-center"> 
+                    <div class="col">
+                        <img src="web-design-feed-logo.svg" alt="Web Design Feed" class="logo"/>
+                    </div>
+
+                    <nav class="col">
+                        <ul class="list-unstyled d-flex justify-content-between mb-0 pb-0">
+                            <li><a href="#" class="nav-desktop">Frameworks</a></li>
+                            <li><a href="#" class="nav-desktop">CSS</a></li>
+                            <li><a href="#" class="nav-desktop">JavaScript</a></li>
+                            <li><a href="#" class="nav-desktop">UI/UX</a></li>
+                            <li><a href="#" class="nav-desktop">Accessibility</a></li>
+                            <li><a href="#" class="nav-desktop">Performance</a></li>
+                            <li><a href="#" class="nav-desktop">Design Tools</a></li>
+                            <li><a href="#" class="nav-desktop">News</a></li>
+                        </ul>
+
+                        <div class="d-flex justify-content-end hamburger-menu">
+                         <button id="sidebarToggle" class="hamburger  btn btn-outline-secondary me-2" aria-controls="siteSidebar" aria-expanded="false" aria-label="Toggle sidebar">
+                           <!-- inline accessible hamburger SVG -->
+                           <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                             <rect x="3" y="6" width="18" height="2" rx="1" fill="currentColor"/>
+                             <rect x="3" y="11" width="18" height="2" rx="1" fill="currentColor"/>
+                             <rect x="3" y="16" width="18" height="2" rx="1" fill="currentColor"/>
+                           </svg>
+                         </button>
+                        </div>
+
+                    </nav>
+
+
+                
+
+                    
+                </div>
+            </div>
+     </header>
+
+        <!-- The Sidebar -->
+    <aside id="siteSidebar" class="sidebar border-right">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">✕</button>
+        <ul class="list-unstyled">
+            <li><a href="#">Frameworks</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">UI/UX</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Performance</a></li>
+            <li><a href="#">Design Tools</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+    </aside>
+
+    <!-- Backdrop for slideout sidebar -->
+    <div id="sidebarBackdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main class="container my-3 my-md-4 main-content">
+        <div class="row gx-5">
+            <section class="col content-section">
+                <h1>Latest news</h1>
+                <p class="mb-0 pb-0">Learn the fundamentals of web design with our HTML and CSS tutorials. Build landing pages, apps, websites, and more, with animations and other advanced effects.</p>
+
+                <ul class="list-unstyled article-list">
+                    <li>
+                        <article class="article-post border bg-white">
+                            <div class="p-3 row gx-md-1 align-items-center">
+                                <figure class="col-3 col-md-2 mb-0 pb-0" >
+                                    <img src="post-item.jpg" alt="" class="w-100 rounded" />
+                                </figure>
+
+                                <figcaption class=" col mx-md-4">
+                                    <h2><a href="#" class="post-title"> AI features people actually want</a></h2>
+                                    <p class="pb-0 mb-0 post-excerpt">So a big theme of this conversation is how to identify the right opportunities to design AI into a product that’s already working. Ioana shares a bunch of stories and lessons learned from her time at Miro as well as a refreshing perspective on AI and design as whole that I think will resonate with a lot of you.</p>
+                                </figcaption>
+                            </div>
+
+                            <div class="article-post--details">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled d-flex justify-content-around">
+                                            <li class="fw-bold">webdesign.tutsplus.com</li>
+                                            <li>|</li>
+                                            <li class="fw-bold"> UX Design</li>
+                                            <li class="mobile-hidden">|</li>
+                                            <li class="fw-bold mobile-hidden">September 25th 2025</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="" class="btn-primary learn-more">Learn more </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                    </li>
+
+                         <li>
+                        <article class="article-post border bg-white">
+                            <div class="p-3 row gx-md-1 align-items-center">
+                                <figure class="col-3 col-md-2 mb-0 pb-0" >
+                                   <a href="" aria-label="">  <img src="post-item.jpg" alt="" class="w-100 rounded" /> </a>
+                                </figure>
+
+                                <figcaption class=" col mx-md-4">
+                                    <h2><a href="" class="post-title"> AI features people actually want</a></h2>
+                                    <p class="pb-0 mb-0 post-excerpt">So a big theme of this conversation is how to identify the right opportunities to design AI into a product that’s already working. Ioana shares a bunch of stories and lessons learned from her time at Miro as well as a refreshing perspective on AI and design as whole that I think will resonate with a lot of you.</p>
+                                </figcaption>
+                            </div>
+
+                            <div class="article-post--details">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled d-flex justify-content-around">
+                                            <li class="fw-bold">webdesign.tutsplus.com</li>
+                                            <li>|</li>
+                                            <li class="fw-bold"> UX Design</li>
+                                            <li class="mobile-hidden">|</li>
+                                            <li class="fw-bold mobile-hidden">September 25th 2025</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="" class="btn-primary learn-more">Learn more </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                    </li>
+
+
+                        <li>
+                        <article class="article-post border bg-white">
+                            <div class="p-3 row gx-md-1 align-items-center">
+                                <figure class="col-3 col-md-2 mb-0 pb-0" >
+                                   <a href="" aria-label="">  <img src="post-item.jpg" alt="" class="w-100 rounded" /> </a>
+                                </figure>
+
+                                <figcaption class=" col mx-md-4">
+                                    <h2><a href="#" class="post-title"> AI features people actually want</a></h2>
+                                    <p class="pb-0 mb-0 post-excerpt">So a big theme of this conversation is how to identify the right opportunities to design AI into a product that’s already working. Ioana shares a bunch of stories and lessons learned from her time at Miro as well as a refreshing perspective on AI and design as whole that I think will resonate with a lot of you.</p>
+                                </figcaption>
+                            </div>
+
+                            <div class="article-post--details">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled d-flex justify-content-around">
+                                            <li class="fw-bold">webdesign.tutsplus.com</li>
+                                            <li>|</li>
+                                            <li class="fw-bold"> UX Design</li>
+                                            <li class="mobile-hidden">|</li>
+                                            <li class="fw-bold mobile-hidden">September 25th 2025</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-end">
+                                        <a href="" class="btn-primary learn-more">Learn more </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                    </li>
+                </ul>
+
+            </section>
+
+            <aside class="col-md-4 sidebar-section">
+
+                <div class="widget rounded">
+                    <img src="webdesign-design-news.png" class="w-100 rounded border" />
+                </div>
+
+
+                 <div class="widget bg-white p-4 rounded mt-4 widget-posts">
+                    <ul class="list-unstyled widget-posts--list">
+                        <li class="d-flex align-items-center py-3">    
+                              <a href="#" class="d-flex align-items-center">
+                                <img src="https://picsum.photos/60" alt="" class="rounded-circle" />
+                                <h3 class="mx-3 pb-0 mb-0">Designing AI features people actually want</h3>
+                            </a>
+                        </li>
+
+                         <li class="d-flex align-items-center py-3">    
+                               <a href="#" class="d-flex align-items-center">
+                                <img src="https://picsum.photos/60" alt="" class="rounded-circle" />
+                                <h3 class="mx-3 pb-0 mb-0">Designing AI features people actually want</h3>
+                            </a>
+                        </li>
+
+                         <li class="d-flex align-items-center py-3">    
+                               <a href="#" class="d-flex align-items-center">
+                                <img src="https://picsum.photos/60" alt="" class="rounded-circle" />
+                                <h3 class="mx-3 pb-0 mb-0">Designing AI features people actually want</h3>
+                            </a>
+                        </li>
+
+
+                         <li class=" py-3">    
+                            <a href="#" class="d-flex align-items-center">
+                                <img src="https://picsum.photos/60" alt="" class="rounded-circle" />
+                                <h3 class="mx-3 pb-0 mb-0">Designing AI features people actually want</h3>
+                            </a>
+                        </li>
+
+                         <li class="d-flex align-items-center py-3">    
+                              <a href="#" class="d-flex align-items-center">
+                                <img src="https://picsum.photos/60" alt="" class="rounded-circle" />
+                                <h3 class="mx-3 pb-0 mb-0">Designing AI features people actually want</h3>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>  
+
+            </aside>
+
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top">
+      <div class="container text-center">
+        <ul class="list-unstyled mb-0 pb-2 d-flex justify-content-center">
+            <li class="px-4">About Us</li>
+            <li class="px-4">About Us</li>
+            <li class="px-4">Contact Us</li>
+        </ul>
+        <small>&copy; Copyright Web Design List 2025</small>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script>
+      // Sidebar toggle for viewports <= 1918px
+      (function(){
+        var toggle = document.getElementById('sidebarToggle');
+        var body = document.body;
+        var backdrop = document.getElementById('sidebarBackdrop');
+        var sidebar = document.getElementById('siteSidebar');
+        var sidebarClose = document.getElementById('sidebarClose');
+
+        function closeSidebar(){
+          body.classList.remove('sidebar-open');
+          toggle && toggle.setAttribute('aria-expanded','false');
+        }
+
+        function openSidebar(){
+          body.classList.add('sidebar-open');
+          toggle && toggle.setAttribute('aria-expanded','true');
+        }
+
+        if(toggle){
+          toggle.addEventListener('click', function(e){
+            if(window.innerWidth <= 1918){
+              if(body.classList.contains('sidebar-open')) closeSidebar(); else openSidebar();
+            }
+          });
+        }
+
+        if(sidebarClose){
+          sidebarClose.addEventListener('click', function(){
+            closeSidebar();
+          });
+        }
+
+        if(backdrop){
+          backdrop.addEventListener('click', closeSidebar);
+        }
+
+        // Close when a sidebar link is clicked (mobile)
+        if(sidebar){
+          sidebar.addEventListener('click', function(e){
+            if(e.target.tagName === 'A' && window.innerWidth <= 1918){
+              closeSidebar();
+            }
+          });
+        }
+
+        // Ensure sidebar state resets on resize beyond breakpoint
+        window.addEventListener('resize', function(){
+          if(window.innerWidth > 1918){
+            body.classList.remove('sidebar-open');
+            toggle && toggle.setAttribute('aria-expanded','false');
+          }
+        });
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

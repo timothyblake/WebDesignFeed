@@ -1,0 +1,1 @@
+Replace screenshot.png with a 1200x900 image to preview the theme in Appearance → Themes.

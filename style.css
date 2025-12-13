@@ -1,0 +1,684 @@
+/*
+Theme Name: Web Design Feed
+Theme URI: https://webdesignfeed.com
+Author: Timothy Blake
+Author URI: https://timothyblake.com
+Description: Starter blank WordPress theme for the Web Design Feed blog by Timothy Blake.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: web-design-feed
+Tags: blog, one-column, custom-logo, custom-menu, featured-images
+*/
+
+/* Basic theme styles - customize as needed */
+body {
+  font-family: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  background: #F2F3F6;
+  /* padding-top: 56px; Adjust for fixed navbar */
+}
+
+.w-100{
+height: auto !important;}
+
+h1, h2, h3 {
+  font-family: 'Rubik', 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+}
+
+ul, p, li, a {
+  font-family: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1{
+    font-size: 28px;
+}
+
+
+h1::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #6D47E7;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* buttons */
+ .nav-desktop li{
+    display: none !important;
+ }
+
+ .nav-desktop li a{
+    color: #1d1e20;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+  .nav-desktop li a:hover{
+    color: #6D47E7;
+    text-decoration: underline;
+    /* font-weight: 600; */
+}
+
+/* Newsletter Section */
+
+.newsletter-bg {
+  background: #FFCD36;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.newsletter-bg span{
+    font-size: 18px;
+}
+
+.newsletter-bg .fw-bold {
+  color: #212529;
+}
+
+/* Header Section */
+.header {
+  background: #FFFFFF;
+  padding: 15px 0;
+}
+
+
+.header .current-menu-item a {
+    color: #6d47e7 !important;
+    font-weight: 600;
+}
+
+.header .border-bottom {
+  border-bottom: 1px solid #D8DAE0;
+}
+
+.logo{
+    padding: 20px;
+}
+
+.btn-submit {
+  background-color: #6D47E7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+h3.related-posts-title{
+  font-size: 20px;
+}
+
+        /* Style for the fixed sidebar */
+        .sidebar {
+            position: absolute;
+            top: 160px; /* Position it below the header */
+            left: 0;
+            width: 290px; /* Fixed width for the sidebar */
+            height: calc(100% - 60px); /* Full height minus header height */
+            background-color: #fff;
+            padding: 20px;
+            overflow-y: auto; /* Allows scrolling within the sidebar if content is long */
+            z-index: 9;
+            border-right: solid #dee2e6 1px;
+        }
+
+     .border-right {
+            border-right: 1px solid #D8DAE0;
+        }
+
+        .sidebar ul li a {
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #F2F3F6;
+            color: #6D47E7;
+            font-weight: 600;
+        }
+
+         .sidebar .current-menu-item a {
+              background-color: #F2F3F6;
+            color: #6d47e7 !important;
+            font-weight: 600;
+        }
+
+        .widget-posts h2{
+          font-size: 24px;
+        }
+
+        .featured-post{
+          color: #5d3cc7;
+        }
+
+
+        /* Main content area */
+
+
+        .content-section{
+            border-right: solid #D8DAE0 1px;
+        }
+
+        .sidebar-section{
+            border-left: solid #fff 1px;
+        }
+
+        .article-post{
+          border-radius:10px;
+            border: #D8DAE0 1px solid;
+        }
+
+        .article-post figure img{
+          border: solid #ccc 1px;
+        }
+
+        .article-post h2{
+            font-size: 20px;
+        }
+        .article-post h2 a{
+            text-decoration: none;
+            transition: all 0.5s ease;
+            color: #222529;
+        }
+
+        .article-post h2 a:hover{
+          text-decoration: underline;
+          color: #6D47E7;
+          background: #F2F3F6;
+        }
+
+
+        .article-post figure img{
+          border: solid #ccc 1px;
+        }
+
+        .article-post figure img:hover{
+          border: solid #ccc 1px;
+          transform: scale(1.03);
+          box-shadow: 0 12px 30px rgba(16,24,40,0.12);
+          transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .article-post p{
+            color: #4E4E4E;
+        }
+
+        .btn-primary:hover{
+            background: linear-gradient(180deg, #5d3cc7 0%, #6D47E7 100%);
+            border: 1px solid #5436b4;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+         .btn-primary{
+            color: #000;
+            background: #FFCD36;
+            border: 1px solid #e6b800;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .article-post--details {
+            font-size: 14px;
+            background: #D9D9D9;
+            padding: 10px 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .article-post--details ul a{
+            color: #6d47e7;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .article-list  li .article-post{
+            border-bottom: #fff 1px solid;
+            margin-bottom: 20px;
+        }
+
+
+          .article-list > li:first-child {
+            border-top: none;
+            margin-bottom: 0;
+
+        }
+        .article-list > li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+
+        }
+        .article-list > li {
+            border-bottom: #fff solid 1px;
+            /* margin-bottom: 20px; */
+            border-top: 1px solid #D3D3D3;
+            padding-top: 20px;
+            }
+
+            .article-list li:last-child {
+                margin-bottom: 0 !important;
+                padding-bottom: 0;
+            }
+
+        /* sidebar scrollbar styling */
+        .widget{
+            border: #DEE0E5 1px solid;
+        }
+
+
+        .widget h3 a{
+            color: #000;
+            text-decoration: underline;
+            font-size: 16px
+
+        }
+
+        .widget h3 a:hover{
+            color: #6D47E7;
+            text-decoration: underline;
+            background: #F2F3F6;
+
+        }
+
+        .widget-posts h3{
+            font-size: 16px;
+        }
+
+        .widget-posts a h3{
+            text-decoration: none !important;
+            transition: all 0.5s ease;
+            color: #222529;
+        }
+          .widget-posts a h3{
+            color: #222529;
+            text-decoration: underline;
+        }
+
+        .widget-posts--list li{
+            border-bottom: #DEE0E5 1px solid;
+        }
+
+/* Hamburger button */
+
+.hamburger-menu{
+  display: none;
+}
+
+.hamburger{
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 6px;
+  border-radius: 6px;
+}
+.hamburger-box{
+  display:inline-block;
+  position:relative;
+  width:30px;
+  height:22px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after{
+  width:30px;
+  height:3px;
+  background:#111827;
+  display:block;
+  position:absolute;
+  left:0;
+  transition: transform .25s ease, opacity .2s ease, background-color .2s ease;
+  transform-origin: center;
+}
+.hamburger-inner{ top:50%; transform: translateY(-50%); }
+.hamburger-inner::before{ content:''; top:-9px; }
+.hamburger-inner::after{ content:''; top:9px; }
+
+/* When sidebar is open, animate hamburger into a cross */
+body.sidebar-open .hamburger-inner{
+  background: transparent; /* hide middle bar */
+  opacity: 0;
+}
+body.sidebar-open .hamburger-inner::before{
+  transform: translateY(9px) rotate(45deg);
+}
+body.sidebar-open .hamburger-inner::after{
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Backdrop */
+.sidebar-backdrop{
+  /* don't use display:none so we can animate opacity */
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease, background-color .25s ease;
+  pointer-events: none;
+}
+
+/* Sidebar close button (top-left inside sidebar) */
+.sidebar-close{
+  display: none; /* hidden by default on large screens */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #374151;
+  z-index: 1060;
+}
+
+/* Slide-out sidebar behavior for <=1918px */
+@media (max-width: 1918px){
+  
+.nav-desktop li{
+  display: block !important;
+}
+  /* make sidebar hidden by default and positioned off-canvas */
+  #siteSidebar{
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 280px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 1050;
+    padding-top: 80px; /* leave space for header */
+    transition: left .25s ease;
+    box-shadow: 2px 0 10px rgba(16,24,40,0.08);
+  }
+
+  /* show the close button inside the sidebar on smaller screens */
+  .sidebar-close{ display: block; }
+
+  /* push main content to the right slightly when sidebar open for small screens */
+  body.sidebar-open #siteSidebar{ left: 0; }
+
+  /* show backdrop with 50% black when open */
+  body.sidebar-open .sidebar-backdrop{
+    opacity: 0.5;
+    background: rgba(0,0,0,0.5);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* hide default sidebar inside flow to avoid double display */
+  aside.sidebar{ display:block; }
+
+  /* adjust container spacing so page content remains readable */
+  main.container{ padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Responsive adjustments */
+
+.article-post-open h3 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1200px){
+ .hamburger, .hamburger-menu{ display: inline-block; }
+
+ .nav-desktop li{
+    display: none !important;
+ }
+}
+
+@media (max-width: 768px){
+ .post-excerpt{
+    display: none;
+ }
+
+ .learn-more{
+    display: none;
+ }
+
+ .logo{
+    width: 270px;
+    margin: 0 auto;
+    padding: 0;
+ }
+
+ .mobile-hidden{
+    display: none !important;
+ }
+
+ .article-list > li{
+  padding-top: 10px;
+    border: none;
+
+ }
+
+ .article-list li .article-post{
+  margin-bottom: 10px;
+  border: none;
+ }
+}
+
+/* Category badges used near post titles or in meta areas */
+
+
+
+.post-categories,
+.entry-categories,
+.article-post .post-categories {
+  margin: 0 0 8px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.post-categories a,
+.entry-categories a {
+  display: inline-block;
+  background: #F2F3F6;
+  color: #6D47E7;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color .2s ease, color .2s ease, transform .08s ease;
+}
+.post-categories a:hover,
+.entry-categories a:hover {
+  background: #6D47E7;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Pagination and previous/next navigation */
+nav.navigation, .pagination, .wp-pagenavi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    border-top: solid 1px #d3d3d3;
+}
+
+nav.navigation .nav-links,
+.pagination .nav-links,
+.nav-links {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a,
+.nav-links span,
+.page-numbers,
+a.page-numbers {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  color: #222529;
+  border: 1px solid #D8DAE0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .15s ease, color .15s ease, transform .08s ease;
+}
+
+.nav-links a:hover,
+.page-numbers:hover,
+.nav-links span:hover {
+  background: #F2F3F6;
+  color: #6D47E7;
+  transform: translateY(-1px);
+}
+
+/* Current/active page */
+.nav-links .current,
+.page-numbers.current,
+.nav-links .active {
+  background: linear-gradient(180deg, #5d3cc7 0%, #6D47E7 100%);
+  color: #fff !important;
+  border-color: #5d3cc7;
+}
+
+/* Prev / Next buttons slightly different */
+.nav-previous a,
+.nav-next a,
+.nav-links .prev,
+.nav-links .next {
+  /* background: #FFCD36; */
+  border: 1px solid #D8DAE0;
+  color: #000;
+}
+.nav-previous a:hover,
+.nav-next a:hover {
+  background: #ffd84d;
+}
+
+/* Dots (ellipsis) styling */
+.page-numbers.dots,
+.nav-links .dots {
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  color: #6B7280;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .nav-links a,
+  .page-numbers {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .post-categories a { font-size: 12px; padding: 4px 8px; }
+}
+
+/* end added styles for categories and pagination */
+
+/* Newsletter signup form styles (shortcode output .signupform) */
+.signupform{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  max-width:720px;
+  margin:0 auto;
+  padding:8px 0 24px;
+  flex-direction:column; /* stack inputs vertically so each field can be full width */
+  align-items:stretch;
+}
+
+.signupform input[type="email"],
+.signupform .g-recaptcha,
+.signupform .submit-button,
+.signupform .submit-button.button,
+.signupform .primary-cta-btn{
+  width:100%;
+  box-sizing: border-box;
+}
+
+/* keep the submit button height and appearance consistent when full-width */
+.signupform .submit-button{
+  padding:12px 16px;
+}
+
+.signupform input[type="email"]{
+  flex:1 1 auto;
+  min-width:0;
+  padding:12px 16px;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #D8DAE0;
+  background:#fff;
+  color:#111827;
+  box-shadow: none;
+  transition: box-shadow .12s ease, border-color .12s ease, transform .06s ease;
+}
+.signupform input[type="email"]::placeholder{
+  color:#9CA3AF;
+}
+.signupform input[type="email"]:focus{
+  outline: none;
+  border-color: #6D47E7;
+  box-shadow: 0 6px 18px rgba(109,71,231,0.08);
+  transform: translateY(-1px);
+}
+
+.signupform .submit-button,
+.signupform .submit-button.button,
+.signupform .primary-cta-btn{
+  flex:0 0 auto;
+  padding:12px 20px;
+  border-radius:10px;
+  border: none;
+  background: linear-gradient(180deg, #5d3cc7 0%, #6D47E7 100%);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  text-align:center;
+}
+.signupform .submit-button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(109,71,231,0.12);
+}
+/* Ensure any inline margin-top is neutralized */
+.signupform .submit-button{ margin-top: 0 !important; }
+
+/* reCAPTCHA alignment */
+.signupform .g-recaptcha{ margin-left:8px; }
+
+/* Honeypot should remain hidden */
+.signupform [name="hp"]{ display:none !important; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px){
+  .signupform{ flex-direction:column; align-items:stretch; }
+  .signupform .g-recaptcha{ margin-left:0; margin-top:10px; }
+  .signupform .submit-button{ width:100%; }
+}
+
+/* end newsletter form styles */
