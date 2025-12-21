@@ -101,6 +101,7 @@ function web_design_feed_primary_menu_fallback( $args ) {
 // Make the custom image sizes available in the media modal size selector
 function web_design_feed_custom_image_sizes( $sizes ) {
   return array_merge( $sizes, array(
+    'featured_xxs'    => __( 'Featured XXS (70×70)', 'web-design-feed' ),
     'featured_xs'     => __( 'Featured XS (100×100)', 'web-design-feed' ),
     'featured_small'  => __( 'Featured Small (145×140)', 'web-design-feed' ),
     'featured_medium' => __( 'Featured Medium (300×200)', 'web-design-feed' ),

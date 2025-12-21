@@ -23,7 +23,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
       
       <?php
   // Show a featured post (from the 'news' category) in the sidebar as a spotlight.
-  get_template_part( 'template-parts/featured-loop', null, array( 'category' => 'Uncategorized', 'posts_per_page' => 5 ) );
+  get_template_part( 'template-parts/featured-loop', null, array( 'category' => 'Blog', 'posts_per_page' => 5 ) );
   ?>
 
    

@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="row gx-5">
             <section class="col content-section">
                 <h1>Latest news</h1>
-                <p class="mb-0 pb-0">Learn the fundamentals of web design with our HTML and CSS tutorials. Build landing pages, apps, websites, and more, with animations and other advanced effects.</p>
+                <p class="mb-0 pb-0">Stay ahead of the curve. A central hub of cherry picked design and frontend posts for the modern developer or designer. </p>
 
                 <!-- Posts loop -->
                   <?php get_template_part( 'template-parts/loop' ); ?>

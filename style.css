@@ -115,6 +115,11 @@ h3.related-posts-title{
   font-size: 20px;
 }
 
+.footer a{
+  color: #6341d2 !important;
+  text-decoration: none !important;
+}
+
         /* Style for the fixed sidebar */
         .sidebar {
             position: absolute;

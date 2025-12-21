@@ -1,4 +1,4 @@
-Web Design Feed — Starter WordPress Theme
+Web Design Feed 
 
 Author: Timothy Blake
 

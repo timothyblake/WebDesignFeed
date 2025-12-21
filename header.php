@@ -20,6 +20,17 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<!-- Google tag (gtag.js) -->
+<?php if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] !== 'webdesignfeed.local') : ?>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPRFQQ2BXT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPRFQQ2BXT');
+</script>
+<?php endif; ?>
 
 <?php get_template_part( 'template-parts/site-header' ); ?>
 

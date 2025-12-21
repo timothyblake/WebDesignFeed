@@ -1,4 +1,4 @@
-<footer class="py-4 border-top">
+<footer class="py-4 border-top footer">
       <div class="container text-center">
 
         <div class="row justify-content-between">
@@ -23,7 +23,7 @@
           </li>
 
           <li class="px-2">
-            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+            <a href="https://twitter.com/webdesignfeed" target="_blank" rel="noopener" aria-label="Twitter">
               <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/svg/x-50.svg' ); ?>" alt="Twitter" width="24" height="24" class="social-icon" />
             </a>
           </li>
@@ -35,7 +35,8 @@
          </ul>
       </div>
 
-          <div class="col-12 col-md text-md-end">
+          <div class="col-12 col-md text-md-end  ">
+            <small class=" d-block fw-bold"> <a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About Web Design Feed</a></small>
             <small>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</small>
           </div>
         </div>
