@@ -29,16 +29,16 @@
 
           <figure class="col-4 col-md-2 mb-0 pb-0">
             <?php if ( has_post_thumbnail() ) : ?>
-              <a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>"><?php the_post_thumbnail( 'featured_small', array( 'class' => 'w-100 rounded', 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></a>
+              <a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>"><?php the_post_thumbnail( 'featured_small', array( 'class' => 'w-100 rounded', 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></a>
             <?php else : ?>
-              <a href="<?php echo $href; ?>" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>">
+              <a href="<?php echo $href; ?>" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post-item.jpg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="w-100 rounded" />
               </a>
             <?php endif; ?>
           </figure>
 
           <figcaption class="col mx-md-4">
-            <h2><a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>"><?php the_title(); ?></a></h2>
+            <h2><a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>"><?php the_title(); ?></a></h2>
             <p class="pb-0 mb-0 post-excerpt"><?php echo wp_kses_post( wp_trim_words( get_the_excerpt() ? get_the_excerpt() : get_the_content(), 45, '...' ) ); ?></p>
           </figcaption>
         </div>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="col d-flex justify-content-end">
-              <a href="<?php echo $href; ?>" class="btn-primary learn-more" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>"><?php esc_html_e( 'Learn more', 'web-design-feed' ); ?></a>
+              <a href="<?php echo $href; ?>" class="btn-primary learn-more" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Learn more about %s', get_the_title() ) ); ?>"><?php esc_html_e( 'Learn more', 'web-design-feed' ); ?></a>
             </div>
           </div>
         </div>

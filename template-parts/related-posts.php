@@ -19,7 +19,7 @@ if ( $related && $related->have_posts() ) : ?>
         <li class="col-md-6 col-12 ">
             <div class="widget related-posts mt-3 bg-white p-3 rounded nt-4 d-flex align-items-center py-2  h-100">
   
-          <a href="<?php the_permalink(); ?>" class="d-flex align-items-center ">
+          <a href="<?php the_permalink(); ?>" class="d-flex align-items-center " aria-label="Read related post: <?php the_title_attribute(); ?>">
             <div class="me-3">
               <?php if ( has_post_thumbnail() ) :
                 the_post_thumbnail( 'featured_xs', array( 'class' => 'rounded-circle w-100', 'alt' => the_title_attribute( array( 'echo' => false ) ) ) );
@@ -28,7 +28,7 @@ if ( $related && $related->have_posts() ) : ?>
               <?php endif; ?>
             </div>
             <div class="flex-fill">
-              <h3 class="mb-0 small "><a href="<?php the_permalink(); ?>" class="text-decoration-none"><?php the_title(); ?></a></h3>
+              <h3 class="mb-0 small "><a href="<?php the_permalink(); ?>" class="text-decoration-none" aria-label="Read related post: <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
             </div>
           </a>
           </div>

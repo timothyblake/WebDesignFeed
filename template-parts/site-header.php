@@ -8,7 +8,7 @@
 
   <!-- Newsletter -->
      <section class="newsletter-bg">
-            <a href="/newsletter-design-bundle/" class="text-decoration-none"> <span class="fw-bold">Join our newsletter <span class="d-none d-md-inline-block">and receive a free design resource bundle</span> </span>
+            <a href="/newsletter-design-bundle/" class="text-decoration-none" aria-label="Join our newsletter and receive a free design resource bundle"> <span class="fw-bold">Join our newsletter <span class="d-none d-md-inline-block">and receive a free design resource bundle</span> </span>
             </a>
      </section>
 
@@ -21,7 +21,7 @@
                         <?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
                           <?php the_custom_logo(); ?>
                         <?php else : ?>
-                          <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                          <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( sprintf( __( '%s - Home', 'web-design-feed' ), get_bloginfo( 'name' ) ) ); ?>">
                             <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/svg/web-design-feed-logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo"/>
                           </a>
                         <?php endif; ?>

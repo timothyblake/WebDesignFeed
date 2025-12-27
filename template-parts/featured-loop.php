@@ -29,14 +29,14 @@ if ( $featured_query->have_posts() ) : ?>
   
       <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); ?>
         <li class="d-flex align-items-center py-3">    
-          <a href="<?php the_permalink(); ?>" class="row no-gutters align-items-center text-decoration-none featured-post">
+          <a href="<?php the_permalink(); ?>" class="row no-gutters align-items-center text-decoration-none featured-post" aria-label="Read featured post: <?php the_title_attribute(); ?>">
             <?php if ( has_post_thumbnail() ) : ?>
               <div class="col-3 col-md-4 col-lg-3">
               <?php the_post_thumbnail( 'featured_xs', array( 'class' => 'rounded-circle w-100', 'alt' => the_title_attribute( array( 'echo' => false ) ), 'width' => 60, 'height' => 60, 'style' => 'object-fit:cover;width:60px;height:60px;' ) ); ?>
               </div>
             <?php endif; ?>
             <div class="col col-md col-lg">
-              <h3 class=" pb-0 mb-0 text-decoration-none"><?php the_title(); ?></h3>
+              <h3 class=" pb-0 mb-0 text-decoration-none"><span aria-label="Featured post title"><?php the_title(); ?></span></h3>
             </div>
           </a>
         </li>

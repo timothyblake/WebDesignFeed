@@ -361,3 +361,12 @@ function web_design_feed_newsletter_shortcode( $atts ) {
 }
 add_shortcode( 'wdf_newsletter', 'web_design_feed_newsletter_shortcode' );
 
+/**
+ * License details shortcode
+ * Usage: [wdf_license]
+ */
+function web_design_feed_license_shortcode() {
+  return '<p>This content is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International License</a>.</p>';
+}
+add_shortcode( 'wdf_license', 'web_design_feed_license_shortcode' );
+
