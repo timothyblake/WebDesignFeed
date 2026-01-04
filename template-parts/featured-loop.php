@@ -36,7 +36,7 @@ if ( $featured_query->have_posts() ) : ?>
               </div>
             <?php endif; ?>
             <div class="col col-md col-lg">
-              <h3 class=" pb-0 mb-0 text-decoration-none"><span aria-label="Featured post title"><?php the_title(); ?></span></h3>
+              <h3 class=" pb-0 mb-0 text-decoration-none"><span><?php the_title(); ?></span></h3>
             </div>
           </a>
         </li>

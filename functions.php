@@ -366,7 +366,10 @@ add_shortcode( 'wdf_newsletter', 'web_design_feed_newsletter_shortcode' );
  * Usage: [wdf_license]
  */
 function web_design_feed_license_shortcode() {
-  return '<p>This content is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International License</a>.</p>';
+  return '<h2>License Details</h2><p>This resource is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International License</a>. The resource can be used in commercial and personal projects, but cannot be redistributed without the permission of Web Design Feed.</p>';
 }
 add_shortcode( 'wdf_license', 'web_design_feed_license_shortcode' );
 
+
+// Disable the "Big Image" scaling threshold
+add_filter( 'big_image_size_threshold', '__return_false' );

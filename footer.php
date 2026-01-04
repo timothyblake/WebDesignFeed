@@ -17,7 +17,7 @@
           </li>
           
           <li class="px-2">
-            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <a href="https://facebook.com/webdesignfeed" target="_blank" rel="noopener" aria-label="Facebook">
               <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/svg/facebook-50.svg' ); ?>" alt="Facebook" width="24" height="24" class="social-icon" />
             </a>
           </li>

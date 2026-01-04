@@ -45,7 +45,7 @@
 
         <div class="article-post--details">
           <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-8">
               <ul class="list-unstyled d-flex justify-content-around">
                 <?php
                 // Display the Second-Level Domain (SLD) of the source link (found by the button class).

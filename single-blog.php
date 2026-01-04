@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'template-parts/sidebar-menu' ); ?>
+
 <main class="container py-3" role="main">
   <?php
   if ( have_posts() ) :
