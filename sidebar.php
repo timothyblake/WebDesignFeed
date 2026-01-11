@@ -38,32 +38,13 @@ if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 
   <h2 class="text-center "> Join our newsletter </h2>
 
-  <!--form -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <form action="https://newsletters.webdesignfeed.com/subscribe" method="POST" accept-charset="utf-8">
-    <label for="name" class="fw-bold">Name</label>
-    <input type="text" name="name" id="name" placeholder="Your name" />
-    <label for="email" class="mt-3 fw-bold">Email</label>
-    <input type="email" name="email" id="email" placeholder="you@example.com" />
-    
-    <div style="display:none;">
-      <label class="fw-bold" for="hp">HP</label><br/>
-      <input type="text" name="hp" id="hp" placeholder="Leave this field empty"/>
-    </div>
-
-    <div class="g-recaptcha" data-sitekey="6LdXBEAsAAAAAJ3m5jzXTZwdQbHaYccZEMVDjEUB"></div>
-    <br/>
-
-    <input type="hidden" name="list" value="N3iAF5VUAxiEmfMgrJsygA"/>
-    <input type="hidden" name="subform" value="yes"/>
-    <div class="d-flex justify-content-center">
-      <input type="submit" class="btn-primary learn-more mx-auto " name="submit" id="submit" value="Subscribe"/>
-    </div>
-  </form>
+  <?php echo do_shortcode( '[wdf_sidebar_signup]' ); ?>
 
 <div class="text-center">
       <small class="text-center">By subscribing, you agree to our Terms of Service. We respect your privacy and will never share your details.</small>
     </div>
+
+    <!--form end -->
 
 </div>
 

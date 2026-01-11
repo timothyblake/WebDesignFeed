@@ -362,6 +362,49 @@ function web_design_feed_newsletter_shortcode( $atts ) {
 add_shortcode( 'wdf_newsletter', 'web_design_feed_newsletter_shortcode' );
 
 /**
+ * Sidebar newsletter signup shortcode
+ * Usage: [wdf_sidebar_signup]
+ */
+function web_design_feed_sidebar_signup_shortcode( $atts ) {
+  // Ensure reCAPTCHA script is loaded when the shortcode is present
+  wp_enqueue_script( 'web-design-feed-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true );
+
+  $atts = shortcode_atts( array(
+    'action'   => 'https://newsletters.webdesignfeed.com/subscribe',
+    'site_key' => '6LdXBEAsAAAAAJ3m5jzXTZwdQbHaYccZEMVDjEUB',
+    'list'     => 'N3iAF5VUAxiEmfMgrJsygA',
+  ), $atts, 'wdf_sidebar_signup' );
+
+  ob_start();
+  ?>
+  <form class="signupform wdf-sidebar-signup" action="<?php echo esc_url( $atts['action'] ); ?>" method="POST" accept-charset="utf-8" aria-label="Subscribe to our newsletter">
+    <label for="wdf-name" class="fw-bold"><?php esc_html_e( 'Name', 'web-design-feed' ); ?></label>
+    <input type="text" name="name" id="wdf-name" placeholder="<?php echo esc_attr__( 'Your name', 'web-design-feed' ); ?>" />
+
+    <label for="wdf-email" class="mt-3 fw-bold"><?php esc_html_e( 'Email', 'web-design-feed' ); ?></label>
+    <input type="email" name="email" id="wdf-email" placeholder="you@example.com" required />
+
+    <div class="wdf-hp" style="display:none;">
+      <label for="wdf-hp"><?php esc_html_e( 'HP', 'web-design-feed' ); ?></label>
+      <input type="text" name="hp" id="wdf-hp" autocomplete="off" />
+    </div>
+
+    <div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $atts['site_key'] ); ?>"></div>
+
+    <input type="hidden" name="list" value="<?php echo esc_attr( $atts['list'] ); ?>" />
+    <input type="hidden" name="subform" value="yes" />
+
+    <div class="d-flex justify-content-center mt-3">
+      <input type="submit" class="btn-primary learn-more mx-auto" name="submit" id="wdf-submit" value="<?php echo esc_attr__( 'Subscribe', 'web-design-feed' ); ?>" />
+    </div>
+  </form>
+  <?php
+
+  return (string) ob_get_clean();
+}
+add_shortcode( 'wdf_sidebar_signup', 'web_design_feed_sidebar_signup_shortcode' );
+
+/**
  * License details shortcode
  * Usage: [wdf_license]
  */
