@@ -622,3 +622,93 @@ a.page-numbers {
 /* end added styles for categories and pagination */
 
 /* Newsletter signup form styles (shortcode output .signupform) */
+
+/* Labels */
+        /* .widget-contact h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+        } */
+
+        /* Form Grouping */
+        .widget-contact .form-group {
+            margin-bottom: 1rem;
+        }
+
+        /* Labels */
+        .widget-contact label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        /* Inputs */
+        .widget-contact input[type="text"],
+        .widget-contact input[type="email"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .widget-contact input[type="text"]:focus,
+        .widget-contact input[type="email"]:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Honey Pot (Hidden field) */
+        .widget-contact .visually-hidden {
+            display: none;
+        }
+
+        /* reCAPTCHA centering */
+        .widget-contact .recaptcha-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+            overflow: hidden; /* Prevents overflow on very small screens */
+        }
+
+        /* Submit Button */
+        /* .widget-contact input[type="submit"] {
+            display: block;
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 1rem;
+        }
+
+        .widget-contact input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        .widget-contact input[type="submit"]:active {
+            transform: translateY(1px);
+        } */
+
+        /* Footer Text */
+        .widget-contact .privacy-note {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6b7280;
+            line-height: 1.5;
+            display: block;
+        }
