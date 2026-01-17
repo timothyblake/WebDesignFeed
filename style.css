@@ -648,7 +648,7 @@ a.page-numbers {
         }
 
         /* Inputs */
-        .widget-contact input[type="text"],
+        input#wdf-name,  .widget-contact input, .widget-contact input[type="text"],
         .widget-contact input[type="email"] {
             width: 100%;
             padding: 0.75rem;
@@ -712,3 +712,8 @@ a.page-numbers {
             line-height: 1.5;
             display: block;
         }
+
+
+        div#rc-anchor-container {
+    margin: 10px 0;
+}

@@ -321,45 +321,6 @@ function wdf_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'wdf_customize_register' );
 
-/**
- * Newsletter signup shortcode
- * Usage: [wdf_newsletter]
- */
-function web_design_feed_newsletter_shortcode( $atts ) {
-  // Enqueue Google reCAPTCHA (v2) script
-  wp_enqueue_script( 'web-design-feed-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), null, true );
-
-  $action   = 'https://cerebro.creativenerds.co.uk/subscribe';
-  $site_key = '6LeIGS8aAAAAADuLThO2kkgeO31JkQgUu7nXKc7f';
-
-  ob_start();
-  ?>
-
-  <p>👋 Don’t miss out on the latest news, tips, and insights to help you build better websites. Delivered to your inbox once a week.</p>
-  
-  <form action="<?php echo esc_url( $action ); ?>" method="POST" accept-charset="utf-8" class="signupform pb-5 mx-0 px-0" novalidate>
-    <label for="wdf-email" class="screen-reader-text"><?php esc_html_e( 'Email address', 'web-design-feed' ); ?></label>
-    <input type="email" name="email" id="wdf-email" placeholder="<?php echo esc_attr__( 'Please enter your email address', 'web-design-feed' ); ?>" required />
-
-    <div class="g-recaptcha" data-sitekey="<?php echo esc_attr( $site_key ); ?>"></div>
-
-    <div class="wdf-honeypot screen-reader-text">
-      <label for="wdf-hp"><?php esc_html_e( 'Leave this field empty', 'web-design-feed' ); ?></label>
-      <input type="text" name="hp" id="wdf-hp" autocomplete="off" />
-    </div>
-
-    <input type="hidden" name="list" value="LzYXAcvZ8763bqupfs6DjSfw" />
-    <input type="hidden" name="subform" value="yes" />
-
-    <button type="submit" name="submit" id="wdf-submit" class="submit-button button primary-cta-btn py-3">
-      <?php esc_html_e( 'Subscribe', 'web-design-feed' ); ?>
-    </button>
-  </form>
-  <?php
-
-  return (string) ob_get_clean();
-}
-add_shortcode( 'wdf_newsletter', 'web_design_feed_newsletter_shortcode' );
 
 /**
  * Sidebar newsletter signup shortcode
@@ -371,7 +332,7 @@ function web_design_feed_sidebar_signup_shortcode( $atts ) {
 
   $atts = shortcode_atts( array(
     'action'   => 'https://newsletters.webdesignfeed.com/subscribe',
-    'site_key' => '6LdXBEAsAAAAAJ3m5jzXTZwdQbHaYccZEMVDjEUB',
+    'site_key' => '6LdXBEAsAAAAADtaxOdLorXfNlxBuJHT7lhFENNE',
     'list'     => 'N3iAF5VUAxiEmfMgrJsygA',
   ), $atts, 'wdf_sidebar_signup' );
 

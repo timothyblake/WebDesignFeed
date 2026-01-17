@@ -40,7 +40,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 
   <?php echo do_shortcode( '[wdf_sidebar_signup]' ); ?>
 
-<div class="text-center">
+    <div class="text-center mt-3">
       <small class="text-center">By subscribing, you agree to our Terms of Service. We respect your privacy and will never share your details.</small>
     </div>
 
