@@ -4,6 +4,11 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Preconnect hints for external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -20,6 +25,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<a class="skip-link screen-reader-text" href="#main-content"><?php esc_html_e( 'Skip to content', 'web-design-feed' ); ?></a>
 <!-- Google tag (gtag.js) -->
 <?php if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] !== 'webdesignfeed.local') : ?>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPRFQQ2BXT"></script>

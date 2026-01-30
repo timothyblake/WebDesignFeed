@@ -12,7 +12,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 
   <div class="widget widget-posts  rounded" style="background:#79bcd8; ">
         <h2 class="text-center py-2 text-white" style="background:#416777;"> One stop shop for <br> everything web</h2>
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/webdesign-design-feed.jpg' ); ?>" class="w-100 rounded" alt="Web Design News" />
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/webdesign-design-feed.jpg' ); ?>" class="w-100 rounded" alt="Web Design News" loading="lazy" decoding="async" />
   </div>
 
 

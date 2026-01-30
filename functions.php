@@ -377,3 +377,155 @@ add_shortcode( 'wdf_license', 'web_design_feed_license_shortcode' );
 
 // Disable the "Big Image" scaling threshold
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+/**
+ * SEO Enhancements: Meta description, Open Graph, Twitter Cards
+ */
+function wdf_output_seo_meta_tags() {
+  // Get description from excerpt or content
+  $description = '';
+  if ( is_singular() ) {
+    global $post;
+    if ( has_excerpt( $post->ID ) ) {
+      $description = get_the_excerpt( $post->ID );
+    } else {
+      $description = wp_strip_all_tags( $post->post_content );
+    }
+  } elseif ( is_category() ) {
+    $description = category_description();
+  } elseif ( is_home() || is_front_page() ) {
+    $description = get_bloginfo( 'description' );
+  }
+
+  // Trim to 155 characters
+  $description = wp_strip_all_tags( $description );
+  $description = mb_substr( $description, 0, 155 );
+  if ( strlen( $description ) === 155 ) {
+    $description = preg_replace( '/\s+\S*$/', '', $description ) . '...';
+  }
+
+  if ( ! empty( $description ) ) {
+    echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
+  }
+
+  // Open Graph tags
+  $og_title = is_singular() ? get_the_title() : get_bloginfo( 'name' );
+  $og_url   = is_singular() ? get_permalink() : home_url( '/' );
+  $og_type  = is_singular( 'post' ) ? 'article' : 'website';
+
+  echo '<meta property="og:title" content="' . esc_attr( $og_title ) . '">' . "\n";
+  echo '<meta property="og:description" content="' . esc_attr( $description ) . '">' . "\n";
+  echo '<meta property="og:url" content="' . esc_url( $og_url ) . '">' . "\n";
+  echo '<meta property="og:type" content="' . esc_attr( $og_type ) . '">' . "\n";
+  echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '">' . "\n";
+
+  // Featured image for Open Graph
+  if ( is_singular() && has_post_thumbnail() ) {
+    $og_image = get_the_post_thumbnail_url( null, 'featured_large' );
+    echo '<meta property="og:image" content="' . esc_url( $og_image ) . '">' . "\n";
+  }
+
+  // Twitter Card tags
+  echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+  echo '<meta name="twitter:title" content="' . esc_attr( $og_title ) . '">' . "\n";
+  echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '">' . "\n";
+
+  if ( is_singular() && has_post_thumbnail() ) {
+    $twitter_image = get_the_post_thumbnail_url( null, 'featured_large' );
+    echo '<meta name="twitter:image" content="' . esc_url( $twitter_image ) . '">' . "\n";
+  }
+}
+add_action( 'wp_head', 'wdf_output_seo_meta_tags', 1 );
+
+/**
+ * Output JSON-LD BlogPosting schema for single posts
+ */
+function wdf_output_blogposting_schema() {
+  if ( ! is_singular( 'post' ) ) {
+    return;
+  }
+
+  global $post;
+
+  $schema = array(
+    '@context'         => 'https://schema.org',
+    '@type'            => 'BlogPosting',
+    'headline'         => get_the_title( $post->ID ),
+    'description'      => has_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : wp_trim_words( $post->post_content, 30, '...' ),
+    'datePublished'    => get_the_date( 'c', $post->ID ),
+    'dateModified'     => get_the_modified_date( 'c', $post->ID ),
+    'url'              => get_permalink( $post->ID ),
+    'author'           => array(
+      '@type' => 'Person',
+      'name'  => get_the_author_meta( 'display_name', $post->post_author ),
+    ),
+    'publisher'        => array(
+      '@type' => 'Organization',
+      'name'  => get_bloginfo( 'name' ),
+      'url'   => home_url( '/' ),
+    ),
+    'mainEntityOfPage' => array(
+      '@type' => 'WebPage',
+      '@id'   => get_permalink( $post->ID ),
+    ),
+  );
+
+  // Add featured image if available
+  if ( has_post_thumbnail( $post->ID ) ) {
+    $image_id  = get_post_thumbnail_id( $post->ID );
+    $image_url = get_the_post_thumbnail_url( $post->ID, 'featured_large' );
+    $image_meta = wp_get_attachment_metadata( $image_id );
+
+    $schema['image'] = array(
+      '@type'  => 'ImageObject',
+      'url'    => $image_url,
+      'width'  => isset( $image_meta['width'] ) ? $image_meta['width'] : 1024,
+      'height' => isset( $image_meta['height'] ) ? $image_meta['height'] : 512,
+    );
+  }
+
+  // Add categories as keywords
+  $categories = get_the_category( $post->ID );
+  if ( ! empty( $categories ) ) {
+    $keywords = array_map( function( $cat ) {
+      return $cat->name;
+    }, $categories );
+    $schema['keywords'] = implode( ', ', $keywords );
+  }
+
+  echo '<script type="application/ld+json">' . "\n";
+  echo wp_json_encode( $schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT );
+  echo "\n</script>\n";
+}
+add_action( 'wp_head', 'wdf_output_blogposting_schema', 2 );
+
+/**
+ * Clear featured posts transient cache when posts are updated
+ */
+function wdf_clear_featured_posts_cache( $post_id ) {
+  // Don't run on autosave or revisions
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    return;
+  }
+  if ( wp_is_post_revision( $post_id ) ) {
+    return;
+  }
+
+  // Clear all featured posts transients (matching pattern)
+  global $wpdb;
+  $wpdb->query(
+    $wpdb->prepare(
+      "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s",
+      '_transient_wdf_featured_%'
+    )
+  );
+  $wpdb->query(
+    $wpdb->prepare(
+      "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s",
+      '_transient_timeout_wdf_featured_%'
+    )
+  );
+}
+add_action( 'save_post', 'wdf_clear_featured_posts_cache' );
+add_action( 'delete_post', 'wdf_clear_featured_posts_cache' );
+add_action( 'trash_post', 'wdf_clear_featured_posts_cache' );

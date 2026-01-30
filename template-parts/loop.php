@@ -29,10 +29,10 @@
 
           <figure class="col-4 col-md-2 mb-0 pb-0">
             <?php if ( has_post_thumbnail() ) : ?>
-              <a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>"><?php the_post_thumbnail( 'featured_small', array( 'class' => 'w-100 rounded', 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></a>
+              <a href="<?php echo $href; ?>" class="post-title" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>"><?php the_post_thumbnail( 'featured_small', array( 'class' => 'w-100 rounded', 'alt' => the_title_attribute( array( 'echo' => false ) ), 'loading' => 'lazy', 'decoding' => 'async' ) ); ?></a>
             <?php else : ?>
               <a href="<?php echo $href; ?>" target="<?php echo esc_attr( $target ); ?>" rel="<?php echo esc_attr( $rel ); ?>" aria-label="<?php echo esc_attr( sprintf( 'Read more: %s', get_the_title() ) ); ?>">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post-item.jpg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="w-100 rounded" />
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post-item.jpg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="w-100 rounded" loading="lazy" decoding="async" />
               </a>
             <?php endif; ?>
           </figure>

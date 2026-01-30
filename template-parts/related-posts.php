@@ -22,9 +22,9 @@ if ( $related && $related->have_posts() ) : ?>
           <a href="<?php the_permalink(); ?>" class="d-flex align-items-center " aria-label="Read related post: <?php the_title_attribute(); ?>">
             <div class="me-3 related-posts-thumbnail">
               <?php if ( has_post_thumbnail() ) :
-                the_post_thumbnail( 'featured_xs', array( 'class' => 'rounded-circle w-100', 'alt' => the_title_attribute( array( 'echo' => false ) ) ) );
+                the_post_thumbnail( 'featured_xs', array( 'class' => 'rounded-circle w-100', 'alt' => the_title_attribute( array( 'echo' => false ) ), 'loading' => 'lazy', 'decoding' => 'async' ) );
               else : ?>
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/featured-150x150.svg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="rounded-circle" width="60" height="60" />
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/featured-150x150.svg' ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" class="rounded-circle" width="60" height="60" loading="lazy" decoding="async" />
               <?php endif; ?>
             </div>
             <div class="flex-fill">
